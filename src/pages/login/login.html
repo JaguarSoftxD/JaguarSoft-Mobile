@@ -1,0 +1,28 @@
+<ion-content padding style="background: url(../assets/imgs/Login.jpg) center; background-size: cover;" padding overflow-scroll="false">
+    <ion-row>
+        <ion-col></ion-col>
+        <ion-col></ion-col>
+        <ion-col></ion-col>
+    </ion-row>
+    <form (ngSubmit)="logIn()">
+        <ion-list no-lines>
+            <ion-item class="item item-trns">
+                <ion-label style="color:white" floating>Usuario</ion-label>
+                <ion-input type="text" name="username" [(ngModel)]="user.username" required></ion-input>
+            </ion-item>
+            <ion-item class="item item-trns">
+                <ion-label style="color:white" floating>Constraseña</ion-label>
+                <ion-input type="password" name="password" [(ngModel)]="user.password" required></ion-input>
+            </ion-item>
+            <ion-item class="item item-trns">
+                <button ion-button block full [disabled]="btnDisabled" type="submit" color="btn">Iniciar Sesión</button>
+            </ion-item>
+        </ion-list>
+    </form>
+    <ion-list no-lines>
+        <ion-item class="items items-trns">
+            <button style="color: white;" ion-button block clear type="button">¿Olvidaste tu contraseña?</button>
+            <button style="color: white;" ion-button block clear type="button">Registrarse</button>
+        </ion-item>
+    </ion-list>
+</ion-content>
