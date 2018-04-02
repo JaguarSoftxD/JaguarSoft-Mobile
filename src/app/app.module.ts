@@ -14,6 +14,11 @@ import { CategorysPage } from '../pages/client/categorys/categorys';
 import { FavoritesPage } from '../pages/client/favorites/favorites';
 import { ProductsPage } from '../pages/client/products/products';
 import { InvoicesPage } from '../pages/client/invoices/invoices';
+import { CategoryService } from './service/category.service';
+import { FavoriteService } from './service/favorite.service';
+import { InvoiceLineService } from './service/invoice-line.service';
+import { InvoiceService } from './service/invoice.service';
+import { UserService } from './service/user.service';
 
 @NgModule({
   declarations: [
@@ -46,6 +51,11 @@ import { InvoicesPage } from '../pages/client/invoices/invoices';
     StatusBar,
     SplashScreen,
     AuthService,
+    CategoryService,
+    FavoriteService,
+    InvoiceLineService,
+    InvoiceService,
+    UserService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
