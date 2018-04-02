@@ -1,0 +1,1 @@
+export const path:any = { path:"http://192.168.1.12:3000" }

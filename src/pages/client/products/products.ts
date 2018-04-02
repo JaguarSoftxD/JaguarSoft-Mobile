@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
 @Component({
-  selector: 'Products',
-  templateUrl: 'Products.html'
+  selector: 'products',
+  templateUrl: 'products.html'
 })
 export class ProductsPage {
 
