@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers } from "@angular/http";
 import { path } from "../config.module";
+
 import "rxjs/add/operator/toPromise";
 
 @Injectable()
-export class UserService {
+export class ProductService {
   headers = new Headers({'Content-Type': 'application/json'});
   private basePath:string = path.path;
 
@@ -17,9 +18,9 @@ export class UserService {
     return Promise.reject(error.message || error)
   }
 
-  //GET USUARIO
+  //GET FAVORITOS
   public getAll():Promise<any> {
-    let url = `${this.basePath}/user/`
+    let url = `${this.basePath}/product/`
     return this.http.get(url)
     .toPromise()
       .then(response => {
@@ -28,21 +29,10 @@ export class UserService {
     .catch(this.handleError)
   }
 
-  //GET USUARIO
+  //GET FAVORITOS
   public getSingle(id:any):Promise<any> {
-    let url = `${this.basePath}/profile/${id}`
+    let url = `${this.basePath}/product/${id}`
     return this.http.get(url)
-    .toPromise()
-      .then(response => {
-        return response.json()
-      })
-    .catch(this.handleError)
-  }
-
-  //UPDATE USUARIO
-  public updated(form:any):Promise<any> {
-    let url = `${this.basePath}/profile/${form.profile_id}`
-    return this.http.put(url, form)
     .toPromise()
       .then(response => {
         return response.json()

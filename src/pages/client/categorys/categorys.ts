@@ -9,11 +9,7 @@ import { ProductsPage } from '../products/products';
   templateUrl: 'categorys.html'
 })
 export class CategorysPage {
-  //Propiedades
   private categorys:any[] = [];
-  private baseId:number = path.id;
-  private pictureCategories:any;
-  private idClient:any;
 
   constructor(
     public navCtrl: NavController,
@@ -24,7 +20,6 @@ export class CategorysPage {
     this.loadAll();
   }
 
-  //Cargar los productos
   public loadAll(){
     this.categorysService.getAll()
     .then(response => {
@@ -36,11 +31,10 @@ export class CategorysPage {
     })
   }
 
-  //Ver Productos de la Categoria
   public seeProducts(parameter:any) {
     this.loading.create({
-        content: "Cargando",
-        duration: 750
+        content: "Cargando...",
+        duration: 500
     }).present();
     this.navCtrl.push(ProductsPage, { parameter });
   }

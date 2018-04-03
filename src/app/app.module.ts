@@ -19,6 +19,9 @@ import { FavoriteService } from './service/favorite.service';
 import { InvoiceLineService } from './service/invoice-line.service';
 import { InvoiceService } from './service/invoice.service';
 import { UserService } from './service/user.service';
+import { ProfileUpdatePage } from '../pages/client/configuration/update-profile/update-profile';
+import { ConfigurationPage } from '../pages/client/configuration/configuration';
+import { ProductService } from './service/product.service';
 
 @NgModule({
   declarations: [
@@ -30,6 +33,8 @@ import { UserService } from './service/user.service';
       FavoritesPage,
       ProductsPage,
       InvoicesPage,
+      ConfigurationPage,
+        ProfileUpdatePage,
   ],
   imports: [
     BrowserModule,
@@ -46,6 +51,8 @@ import { UserService } from './service/user.service';
       FavoritesPage,
       ProductsPage,
       InvoicesPage,
+      ConfigurationPage,
+        ProfileUpdatePage,
   ],
   providers: [
     StatusBar,
@@ -56,6 +63,7 @@ import { UserService } from './service/user.service';
     InvoiceLineService,
     InvoiceService,
     UserService,
+    ProductService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

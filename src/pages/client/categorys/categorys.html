@@ -8,8 +8,8 @@
 </ion-header>
 
 <ion-content class="card-background-page">
-  <ion-card (click)="seeProducts(c.id)" *ngFor="let c of categorys">
-    <img (click)="seeProducts(c.id)" src="../../../assets/imgs/Categorias.jpg"/>
+  <ion-card (click)="seeProducts(c.category_id)" *ngFor="let c of categorys">
+    <img  src="../../../assets/imgs/Categorias.jpg"/>
     <div class="card-title">{{ c.name }}</div>
     <div class="card-subtitle">{{ c.description }}</div>
   </ion-card>

@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar color="client">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Productos</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let p of products" >
+      <img style="height: 60%;" src="{{p.image}}" *ngIf="p.image"/>
+      <img style="height: 60%;" src="../../../assets/imgs/Error 404.jpg" *ngIf="!p.image"/>
+      <ion-card-content>
+          <ion-card-title>
+          {{p.name}}
+          </ion-card-title>
+          <p>
+          {{p.description}}
+          </p>
+      </ion-card-content>
+      <ion-list>
+        <button ion-item (click)="addToCart(p)">
+        <ion-icon name="md-cart" item-start></ion-icon>
+        Añadir al Carrito
+        </button>
+    </ion-list>
+  </ion-card>
+
+</ion-content>
