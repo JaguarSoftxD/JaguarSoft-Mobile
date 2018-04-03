@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-navbar color="client">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Mi Carrito</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let p of products" >
+      <img style="height: 60%;" src="{{p.image}}" *ngIf="p.image"/>
+      <img style="height: 60%;" src="../../../assets/imgs/Error 404.jpg" *ngIf="!p.image"/>
+      <ion-card-content>
+          <ion-card-title>
+          {{p.name}}
+          </ion-card-title>
+          <p><strong>Descripcion: </strong>{{p.description}}
+          <strong>Precio: </strong> {{p.price}}
+          </p>
+      </ion-card-content>
+  </ion-card>
+
+  <ion-fab right bottom>
+    <button ion-fab (click)="viewForm()">
+      <ion-icon ios="ios-card" name="md-card"></ion-icon>
+    </button>
+  </ion-fab>
+</ion-content>

@@ -22,6 +22,8 @@ import { UserService } from './service/user.service';
 import { ProfileUpdatePage } from '../pages/client/configuration/update-profile/update-profile';
 import { ConfigurationPage } from '../pages/client/configuration/configuration';
 import { ProductService } from './service/product.service';
+import { CartPage } from '../pages/client/cart/cart';
+import { FormInvoicePage } from '../pages/client/invoices/form-invoice/form-invoice';
 
 @NgModule({
   declarations: [
@@ -33,6 +35,8 @@ import { ProductService } from './service/product.service';
       FavoritesPage,
       ProductsPage,
       InvoicesPage,
+        FormInvoicePage,
+      CartPage,
       ConfigurationPage,
         ProfileUpdatePage,
   ],
@@ -51,6 +55,8 @@ import { ProductService } from './service/product.service';
       FavoritesPage,
       ProductsPage,
       InvoicesPage,
+        FormInvoicePage,
+      CartPage,
       ConfigurationPage,
         ProfileUpdatePage,
   ],

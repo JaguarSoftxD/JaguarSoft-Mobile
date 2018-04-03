@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-navbar color="client">
+    <ion-title>Comprar</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <form (ngSubmit)="saveChanges()">
+    <ion-list >
+      <!-- NIT -->
+      <ion-item>
+        <ion-label floating>Nit</ion-label>
+        <ion-input type="text" [(ngModel)]="invoice.nit" name="nit">
+        </ion-input>
+      </ion-item>
+      <!-- NOMBRE -->
+      <ion-item>
+        <ion-label floating>Nombre</ion-label>
+        <ion-input type="text" [(ngModel)]="invoice.name" name="nombre">
+        </ion-input>
+      </ion-item>
+      <!-- FECHA -->
+      <ion-item>
+        <ion-label floating>Fecha</ion-label>
+        <ion-datetime displayFormat="YYYY MMM DD" [(ngModel)]="invoice.invoice_date"
+        pickerFormat="DD MMM YYYY" name="fecha">
+        </ion-datetime>
+      </ion-item>
+      <!-- NO. FACTURA -->
+      <ion-item>
+        <ion-label floating>No. Factura</ion-label>
+        <ion-input type="text" disabled [(ngModel)]="invoice.invoice_id" name="comprobante">
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating><ion-icon ios="ios-cash" md="md-cash"></ion-icon>  Total</ion-label>
+        <ion-input type="text" [(ngModel)]="invoice.amount" name="total">
+        </ion-input>
+      </ion-item>
+      <button ion-button type="submit" block>Guardar</button>
+    </ion-list>
+  </form>
+</ion-content>

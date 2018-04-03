@@ -7,6 +7,7 @@ import { path } from "./../../app/config.module";
 import { CategorysPage } from './categorys/categorys';
 import { ProductsPage } from './products/products';
 import { ConfigurationPage } from './configuration/configuration';
+import { CartPage } from './cart/cart';
 
 @Component({
   selector: 'page-client',
@@ -31,9 +32,9 @@ export class ClientPage {
     this.pages = [
       { icon: 'md-apps', ios: 'ios-apps', title: 'Categorías', component: CategorysPage },
       { icon: 'md-albums', ios: 'ios-albums', title: 'Productos', component: ProductsPage },
-      { icon: 'md-star', ios: 'ios-star', title: 'Favoritos', component: CategorysPage },
-      { icon: 'md-cart', ios: 'ios-cart', title: 'Mi Carrito', component: CategorysPage },      
-      { icon: 'md-cash', ios: 'ios-cash', title: 'Mis Compras', component: CategorysPage },
+      //{ icon: 'md-star', ios: 'ios-star', title: 'Favoritos', component: CategorysPage },
+      { icon: 'md-cart', ios: 'ios-cart', title: 'Mi Carrito', component: CartPage },      
+      //{ icon: 'md-cash', ios: 'ios-cash', title: 'Mis Compras', component: CategorysPage },
       { icon: 'md-settings', ios: 'ios-settings', title: 'Configuración de la Cuenta', component: ConfigurationPage }
     ];
 
