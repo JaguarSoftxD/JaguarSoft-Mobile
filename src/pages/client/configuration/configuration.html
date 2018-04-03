@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar color="danger">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Perfil</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+    <ion-row class="logo-row">
+        <ion-col></ion-col>
+        <ion-col width-50>
+        <img style="border-radius: 100%; border-color: black; border: 2px;" src="../../../assets/imgs/JaguarSoft.png"/>
+        </ion-col>
+        <ion-col></ion-col>
+    </ion-row>
+    
+    <ion-list>
+        <button ion-item (click)="updateClient()">
+            <ion-icon name="md-happy" item-start></ion-icon>
+            Editar Perfil
+        </button>
+        <button ion-item (click)="changePassword()" disabled>
+            <ion-icon name="md-lock" item-start></ion-icon>
+            Cambiar Contraseña
+        </button>
+    </ion-list>
+</ion-content>
