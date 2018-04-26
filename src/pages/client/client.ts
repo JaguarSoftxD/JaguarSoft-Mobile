@@ -47,7 +47,7 @@ export class ClientPage {
     // we wouldn't want the back button to show in this scenario
     this.loading.create({
       content: "Cargando...",
-      duration: 1500
+      duration: 500
       }).present();
     this.nav.setRoot(page.component);
   }

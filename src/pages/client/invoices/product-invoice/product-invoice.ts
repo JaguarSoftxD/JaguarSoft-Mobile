@@ -48,7 +48,13 @@ export class ProductsInvoicePage {
     this.invoiceService.getLines(id)
     .then(res => {
       for(let x of res.lines) {
+        console.log(x.product_id)
+        console.log(this.returnNameProduct(x.product_id))
+        console.log(this.returnNameImage(x.product_id))
+        
+        
         let l = {
+            
             product: this.returnNameProduct(x.product_id),
             image: this.returnNameImage(x.product_id),
             qty: x.qty,
@@ -74,7 +80,7 @@ export class ProductsInvoicePage {
   //Devolver el Nombre del Usuario
   public returnNameProduct(id:any):any {
     for(var i = 0;i<this.p.length;i++) {
-      if(this.p[i].id == id) {
+      if(this.p[i].product_id == id) {
         return this.p[i].product_name;
       }
     }
@@ -82,7 +88,7 @@ export class ProductsInvoicePage {
 
   public returnNameImage(id:any):any {
     for(var i = 0;i<this.p.length;i++) {
-      if(this.p[i].id == id) {
+      if(this.p[i].product_id == id) {
         return this.p[i].image;
       }
     }

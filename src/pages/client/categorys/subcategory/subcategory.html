@@ -7,11 +7,7 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content>
-  <ion-searchbar id="myInput" [(ngModel)]="search"
-    (ionChange)="searchTable()" (keyup)="searchTable()">
-  </ion-searchbar>
-
+<ion-content padding>
   <ion-list no-lines id="myList" >
         <ion-list *ngFor="let p of subcategorys">
           <button ion-item (click)="seeProducts(p.subcategory_id)">
