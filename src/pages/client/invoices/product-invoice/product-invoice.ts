@@ -74,7 +74,7 @@ export class ProductsInvoicePage {
   //Devolver el Nombre del Usuario
   public returnNameProduct(id:any):any {
     for(var i = 0;i<this.p.length;i++) {
-      if(this.p[i].id === id) {
+      if(this.p[i].id == id) {
         return this.p[i].product_name;
       }
     }
@@ -82,7 +82,7 @@ export class ProductsInvoicePage {
 
   public returnNameImage(id:any):any {
     for(var i = 0;i<this.p.length;i++) {
-      if(this.p[i].id === id) {
+      if(this.p[i].id == id) {
         return this.p[i].image;
       }
     }
