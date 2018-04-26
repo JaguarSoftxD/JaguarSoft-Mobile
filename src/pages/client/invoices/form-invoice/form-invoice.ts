@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, AlertController, LoadingController } from 'ionic-angular';
 import { InvoiceService } from '../../../../app/service/invoice.service';
 import { InvoiceLineService } from '../../../../app/service/invoice-line.service';
+import { InvoicesPage } from '../invoices';
 
 @Component({
   selector: 'form-invoice',
@@ -11,13 +12,14 @@ export class FormInvoicePage {
   private invoiceTemp:any[] = []
   private products:any[] = []
   private now:any;
+  private factura:boolean = false;
   private invoice = {
+    user_id: localStorage.getItem('profile_id'),
     invoice_id: 0,
     amount: 0,
     invoice_date: '',
     name: localStorage.getItem('username'),
     nit: localStorage.getItem('nit'),
-    user_id: localStorage.getItem('profile_id')
   }
   invoiceDetail = {
     amount: 0,
@@ -28,6 +30,7 @@ export class FormInvoicePage {
     public alertCtrl: AlertController,
     public invoiceService: InvoiceService,
     public invoiceLineService: InvoiceLineService,
+    public load: LoadingController,
     public loading: LoadingController) {
     this.products = JSON.parse(localStorage.getItem('carrito'))
     this.loadInvoice();
@@ -64,7 +67,7 @@ export class FormInvoicePage {
       this.invoiceTemp.reverse();
       console.log(this.invoiceTemp)
       console.log(+this.invoiceTemp[0].invoice_id + 1)
-      this.invoice.invoice_id = +this.invoiceTemp[0].invoice_id + 1;
+      this.invoice.invoice_id = +this.invoiceTemp[0].invoice_id + 1
     }).catch(error => {
 
     })
@@ -81,19 +84,23 @@ export class FormInvoicePage {
   }
 
   public saveChanges() {
-    let invoice_id = this.invoice.invoice_id;
+    let id = this.invoice.invoice_id;
     console.log(this.invoiceDetail)
-    this.invoiceService.create(this.invoiceDetail)
+    this.invoiceService.create(this.invoice)
     .then(res => {
       console.log(res)
       for(let x of this.products) {
         let productCart = {
           product_id: x.product_id,
-          invoice_id: invoice_id,
+          invoice_id: id,
           qty: 1,
           price: x.price,
           subtotal: 1 * x.price,
         }
+        this.loading.create({
+          content: 'Realizando Compras',
+          duration: 4000
+        }).present()
         console.log(productCart)
         this.invoiceLineService.create(productCart)
         .then(res => {}
@@ -101,6 +108,8 @@ export class FormInvoicePage {
           console.log(error);
         })
       }
+      
+      this.navCtrl.setRoot(InvoicesPage)
     }).catch(error => {
       console.log(error)
     })

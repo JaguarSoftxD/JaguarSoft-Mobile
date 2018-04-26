@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar color="client">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Facturas</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list no-lines id="myList" >
+    <ion-card *ngFor="let p of invoices" (click)="productInvoice(p.invoice_id)">
+        <ion-card-content>
+            <ion-card-title><ion-icon ios="ios-cash" md="md-cash"></ion-icon>  Factura No. {{p.invoice_id}}
+            </ion-card-title>
+            <p><strong>Fecha: </strong>{{p.invoice_date}}
+            <strong>Total: </strong> {{p.amount}}
+            </p>
+        </ion-card-content>
+    </ion-card>
+  </ion-list>
+</ion-content>

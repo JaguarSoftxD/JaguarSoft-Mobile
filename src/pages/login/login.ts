@@ -4,6 +4,7 @@ import { AuthService } from '../../app/service/auth.service';
 import { LoadingController } from 'ionic-angular/components/loading/loading-controller';
 import { ToastController } from 'ionic-angular/components/toast/toast-controller';
 import { ClientPage } from '../client/client';
+import { RegisterPage } from '../register/register';
 
 @Component({
   selector: 'login',
@@ -11,7 +12,7 @@ import { ClientPage } from '../client/client';
 })
 export class LoginPage {
   private user:any = {
-    user:"",
+    email:"",
     password: ""
   }
 
@@ -26,10 +27,11 @@ export class LoginPage {
     console.log(this.user)
     this.authService.authentication(this.user)
     .then(res => {
-      localStorage.setItem('profile_id', res.profile[0].profile_id);
-      localStorage.setItem('username', res.profile[0].firstname + ' ' + res.profile[0].lastname);
-      localStorage.setItem('nit', res.profile[0].nit);
-      localStorage.setItem('email', res.profile[0].email);
+      console.log(res)
+      localStorage.setItem('profile_id', res.user[0].user_id);
+      localStorage.setItem('username', res.user[0].firstname + ' ' + res.user[0].lastname);
+      localStorage.setItem('nit', res.user[0].nit);
+      localStorage.setItem('email', res.user[0].email);
       localStorage.setItem('carrito', JSON.stringify([]))
       this.loading.create({
         content: 'Iniciando Sesión...',
@@ -43,6 +45,10 @@ export class LoginPage {
       }).present();
       console.log(error)
     })
+  }
+
+  public register() {
+    this.navCtrl.push(RegisterPage)
   }
 
 }

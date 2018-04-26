@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-navbar color="client">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Favoritos</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-searchbar id="myInput" [(ngModel)]="search"
+    (ionChange)="searchTable()" (keyup)="searchTable()">
+  </ion-searchbar>
+
+
+  <ion-list no-lines id="myList" >
+  <ion-card *ngFor="let p of products" >
+      <img style="height: 60%;" src="{{p.image}}" *ngIf="p.image"/>
+      <img style="height: 60%;" src="../../../assets/imgs/Error 404.jpg" *ngIf="!p.image"/>
+      <ion-card-content>
+          <ion-card-title>
+          {{p.product_name}}
+          </ion-card-title>
+          <p><strong>Categoría: </strong>{{p.category_name}}
+          <strong>Subcategoría: </strong>{{p.subcategory_name}}
+          <strong>Precio: </strong> {{p.price}}
+          </p>
+      </ion-card-content>
+      <ion-list>
+        <button ion-item (click)="addToCart(p)">
+        <ion-icon name="ios-cart" item-start></ion-icon>
+        Añadir al Carrito
+        </button>
+        <button ion-item (click)="delete(p.favorite_id)">
+        <ion-icon name="ios-trash" item-start></ion-icon>
+        Eliminar
+        </button>
+    </ion-list>
+  </ion-card>
+  </ion-list>
+</ion-content>

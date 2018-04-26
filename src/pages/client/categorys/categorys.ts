@@ -3,6 +3,7 @@ import { NavController, LoadingController, AlertController } from 'ionic-angular
 import { path } from "./../../../app/config.module";
 import { CategoryService } from '../../../app/service/category.service';
 import { ProductsPage } from '../products/products';
+import { SubCategorysPage } from './subcategory/subcategory';
 
 @Component({
   selector: 'categorys',
@@ -31,12 +32,12 @@ export class CategorysPage {
     })
   }
 
-  public seeProducts(parameter:any) {
+  public seeSubCategorys(parameter:any) {
     this.loading.create({
         content: "Cargando...",
         duration: 500
     }).present();
-    this.navCtrl.push(ProductsPage, { parameter });
+    this.navCtrl.push(SubCategorysPage, { parameter });
   }
 
 

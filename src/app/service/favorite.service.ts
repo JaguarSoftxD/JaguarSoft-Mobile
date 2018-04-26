@@ -29,10 +29,32 @@ export class FavoriteService {
     .catch(this.handleError)
   }
 
+  //UPDATE USUARIO
+  public create(form:any):Promise<any> {
+    let url = `${this.basePath}/favorite/`
+    return this.http.post(url, form)
+    .toPromise()
+      .then(response => {
+        return response.json()
+      })
+    .catch(this.handleError)
+  }
+
   //GET FAVORITOS
   public getSingle(id:any):Promise<any> {
     let url = `${this.basePath}/favorite/${id}`
     return this.http.get(url)
+    .toPromise()
+      .then(response => {
+        return response.json()
+      })
+    .catch(this.handleError)
+  }
+
+  //GET FAVORITOS
+  public delete(id:any):Promise<any> {
+    let url = `${this.basePath}/favorite/${id}`
+    return this.http.delete(url)
     .toPromise()
       .then(response => {
         return response.json()

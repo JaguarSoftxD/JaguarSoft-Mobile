@@ -8,6 +8,11 @@
 </ion-header>
 
 <ion-content>
+  <ion-searchbar id="myInput" [(ngModel)]="search"
+    (ionChange)="searchTable()" (keyup)="searchTable()">
+  </ion-searchbar>
+
+  <ion-list no-lines id="myList" >
   <ion-card *ngFor="let p of products" >
       <img style="height: 60%;" src="{{p.image}}" *ngIf="p.image"/>
       <img style="height: 60%;" src="../../../assets/imgs/Error 404.jpg" *ngIf="!p.image"/>
@@ -19,11 +24,18 @@
           <strong>Precio: </strong> {{p.price}}
           </p>
       </ion-card-content>
+      <ion-list>
+        <button ion-item (click)="deleteCar(p)">
+        <ion-icon name="ios-trash" item-start></ion-icon>
+        Eliminar del Carrito
+        </button>
+      </ion-list>
   </ion-card>
+</ion-list>
 
   <ion-fab right bottom>
     <button ion-fab (click)="viewForm()">
-      <ion-icon ios="ios-card" name="md-card"></ion-icon>
+      <ion-icon ios="ios-card" name="ios-card"></ion-icon>
     </button>
   </ion-fab>
 </ion-content>

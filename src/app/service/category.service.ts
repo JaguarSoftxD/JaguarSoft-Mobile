@@ -30,6 +30,28 @@ export class CategoryService {
   }
 
   //GET CATEGORIA
+  public getAllSubCategoryProduct(id:any):Promise<any> {
+    let url = `${this.basePath}/subcategory/${id}/product`
+    return this.http.get(url)
+    .toPromise()
+      .then(response => {
+        return response.json()
+      })
+    .catch(this.handleError)
+  }
+
+  //GET CATEGORIA
+  public getAllSubCategorias(id:any):Promise<any> {
+    let url = `${this.basePath}/category/${id}/subcategory`
+    return this.http.get(url)
+    .toPromise()
+      .then(response => {
+        return response.json()
+      })
+    .catch(this.handleError)
+  }
+
+  //GET CATEGORIA
   public getAllProducts(id:any):Promise<any> {
     let url = `${this.basePath}/category/${id}/product`
     return this.http.get(url)

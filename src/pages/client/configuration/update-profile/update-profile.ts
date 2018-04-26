@@ -9,15 +9,16 @@ import { ConfigurationPage } from '../configuration';
 })
 export class ProfileUpdatePage {
   private idClient:any;
-  private profileUpdate = {
+  private userUpdate = {
       email: '',
       firstname: '',
       lastname: '',
-      birthday: '',
       phone: '',
       address: '',
       nit: '',
-      profile_id: 0
+      image: '',
+      user_id: 0,
+      password: ''
   }
   
   //Constructor
@@ -32,16 +33,17 @@ export class ProfileUpdatePage {
     console.log(this.idClient)
     this.userService.getSingle(this.idClient)
     .then(response => {
-      console.log(response.profile[0].firstname)
-      console.log(response.profile[0].firstname)
-        this.profileUpdate.email = response.profile[0].email;
-        this.profileUpdate.firstname = response.profile[0].firstname;
-        this.profileUpdate.lastname = response.profile[0].lastname;
-        this.profileUpdate.birthday = response.profile[0].birthday;
-        this.profileUpdate.phone = response.profile[0].phone;
-        this.profileUpdate.address = response.profile[0].address;
-        this.profileUpdate.nit = response.profile[0].nit;
-        this.profileUpdate.profile_id = this.idClient;
+      console.log(response.user[0].firstname)
+      console.log(response.user[0].firstname)
+        this.userUpdate.email = response.user[0].email;
+        this.userUpdate.firstname = response.user[0].firstname;
+        this.userUpdate.lastname = response.user[0].lastname;
+        this.userUpdate.image = response.user[0].image;
+        this.userUpdate.phone = response.user[0].phone;
+        this.userUpdate.address = response.user[0].address;
+        this.userUpdate.nit = response.user[0].nit;
+        this.userUpdate.password = response.user[0].password;
+        this.userUpdate.user_id = this.idClient;
     }).catch(error => {
         console.clear();
     })
@@ -49,7 +51,7 @@ export class ProfileUpdatePage {
 
   //Insertar Datos
   public update(){
-    this.userService.updated(this.profileUpdate)
+    this.userService.updated(this.userUpdate)
     .then(response => {
       let loader = this.loading.create({
         content: "Actualizando Cuenta...",

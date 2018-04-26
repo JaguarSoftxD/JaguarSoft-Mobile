@@ -3,7 +3,7 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Productos</ion-title>
+    <ion-title>Productos de Factura</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -18,22 +18,12 @@
         <img style="height: 60%;" src="../../../assets/imgs/Error 404.jpg" *ngIf="!p.image"/>
         <ion-card-content>
             <ion-card-title>
-            {{p.name}}
+            {{p.product}}
             </ion-card-title>
-            <p><strong>Descripcion: </strong>{{p.description}}
-            <strong>Precio: </strong> {{p.price}}
+            <p><strong>Cantidad: </strong>{{p.qty}}
+            <strong>Subtotal: </strong> {{p.subtotal}}
             </p>
         </ion-card-content>
-        <ion-list>
-          <button ion-item (click)="addToCart(p)">
-          <ion-icon name="ios-cart" item-start></ion-icon>
-          Añadir al Carrito
-          </button>
-          <button ion-item (click)="addFavorite(p.product_id)">
-          <ion-icon name="ios-star" item-start></ion-icon>
-          Añadir a Favoritos
-          </button>
-      </ion-list>
     </ion-card>
   </ion-list>
 </ion-content>

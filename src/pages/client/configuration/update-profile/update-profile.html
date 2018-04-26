@@ -14,56 +14,55 @@
           <ion-item>
             <ion-label floating>Nombres</ion-label>
             <ion-input type="text"
-            [(ngModel)]="profileUpdate.firstname" name="firstname">
+            [(ngModel)]="userUpdate.firstname" name="firstname">
             </ion-input>
           </ion-item>
           <!-- APELLIDOS -->
           <ion-item>
             <ion-label floating>Apellidos</ion-label>
             <ion-input type="text"
-            [(ngModel)]="profileUpdate.lastname" name="lastname">
+            [(ngModel)]="userUpdate.lastname" name="lastname">
             </ion-input>
           </ion-item>
           <!--CORREO ELECTRONICO -->
           <ion-item>
             <ion-label floating>Correo Electrónico</ion-label>
             <ion-input type="text"
-            [(ngModel)]="profileUpdate.email" name="email">
+            [(ngModel)]="userUpdate.email" name="email">
             </ion-input>
           </ion-item>
+          <ion-item>
+              <ion-label floating>Contraseña</ion-label>
+              <ion-input type="password"
+              [(ngModel)]="userUpdate.password" name="password">
+              </ion-input>
+            </ion-item>
           <!-- EDAD -->
           <ion-item>
             <ion-label floating>Nit</ion-label>
             <ion-input type="text"
-            [(ngModel)]="profileUpdate.nit" name="nit">
+            [(ngModel)]="userUpdate.nit" name="nit">
             </ion-input>
-          </ion-item>
-          <!-- CUMPLEAÑOS -->
-          <ion-item>
-            <ion-label floating>Fecha de Nacimiento</ion-label>
-            <ion-datetime displayFormat="DD MMM YYYY"
-            [(ngModel)]="profileUpdate.birthday" name="birthday">
-            </ion-datetime>
           </ion-item>
           <!-- TELEFONO -->
           <ion-item>
             <ion-label floating>No. Teléfono</ion-label>
             <ion-input type="text"
-            [(ngModel)]="profileUpdate.phone" name="phone">
+            [(ngModel)]="userUpdate.phone" name="phone">
             </ion-input>
           </ion-item>
           <!--TRABAJO -->
           <ion-item>
             <ion-label floating>Dirección</ion-label>
             <ion-input type="text"
-            [(ngModel)]="profileUpdate.address" name="address">
+            [(ngModel)]="userUpdate.address" name="address">
             </ion-input>
           </ion-item>
           </ion-list>
       </ion-col>
     </ion-row>
     <ion-row>
-      <button ion-button full color="primary" type="submit" >
+      <button ion-button full color="primary" type="submit" color="save">
       Guardar
       </button>
     </ion-row>

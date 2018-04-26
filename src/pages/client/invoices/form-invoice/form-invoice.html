@@ -29,7 +29,7 @@
       <!-- NO. FACTURA -->
       <ion-item>
         <ion-label floating>No. Factura</ion-label>
-        <ion-input type="text" disabled [(ngModel)]="invoice.invoice_id" name="comprobante">
+        <ion-input type="text" [disabled]="factura" [(ngModel)]="invoice.invoice_id" name="comprobante">
         </ion-input>
       </ion-item>
       <ion-item>

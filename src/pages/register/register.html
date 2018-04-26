@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-navbar color="register">
+    <ion-title>Crear Cuenta</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding style="background: url(assets/imgs/Login-Wallpaper.jpg) center; background-size: cover;" padding overflow-scroll="false">
+  <ion-grid>
+    <form (ngSubmit)="saveChanges()">
+    <ion-row>
+      <ion-col>
+        <ion-list>
+          <!-- NOMBRE DEL USUARIO -->
+          <ion-item class="item item-trns">
+            <ion-label style="color: white;" floating>Nombres</ion-label>
+            <ion-input type="text"
+            [(ngModel)]="profileUpdate.firstname" name="firstname">
+            </ion-input>
+          </ion-item>
+          <!-- APELLIDOS -->
+          <ion-item class="item item-trns">
+            <ion-label style="color: white;" floating>Apellidos</ion-label>
+            <ion-input type="text"
+            [(ngModel)]="profileUpdate.lastname" name="lastname">
+            </ion-input>
+          </ion-item>
+          <!--CORREO ELECTRONICO -->
+          <ion-item class="item item-trns">
+            <ion-label style="color: white;" floating>Correo Electrónico</ion-label>
+            <ion-input type="text"
+            [(ngModel)]="profileUpdate.email" name="email">
+            </ion-input>
+          </ion-item>
+          <ion-item class="item item-trns">
+            <ion-label style="color: white;" style="color: white;" floating>Contraseña</ion-label>
+            <ion-input type="password"
+            [(ngModel)]="profileUpdate.password" name="password">
+            </ion-input>
+          </ion-item>
+          <!-- EDAD -->
+          <ion-item class="item item-trns">
+            <ion-label style="color: white;" floating>Nit</ion-label>
+            <ion-input type="text"
+            [(ngModel)]="profileUpdate.nit" name="nit">
+            </ion-input>
+          </ion-item>
+          <!-- TELEFONO -->
+          <ion-item class="item item-trns">
+            <ion-label style="color: white;" floating>No. Teléfono</ion-label>
+            <ion-input type="text"
+            [(ngModel)]="profileUpdate.phone" name="phone">
+            </ion-input>
+          </ion-item>
+          <!--TRABAJO -->
+          <ion-item class="item item-trns">
+            <ion-label style="color: white;" floating>Dirección</ion-label>
+            <ion-input type="text"
+            [(ngModel)]="profileUpdate.address" name="address">
+            </ion-input>
+          </ion-item>
+          </ion-list>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <button ion-button full color="primary" type="submit" color="save">
+      Registrarse
+      </button>
+    </ion-row>
+    </form>
+  </ion-grid>
+</ion-content>

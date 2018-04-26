@@ -1,1 +1,2 @@
-export const path:any = { path:"http://192.168.0.101:3000" }
+//export const path:any = { path:"http://jbackend.herokuapp.com" }
+export const path:any = { path:"http://localhost:3000" }

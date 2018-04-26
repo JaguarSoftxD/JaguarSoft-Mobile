@@ -24,21 +24,28 @@ import { ConfigurationPage } from '../pages/client/configuration/configuration';
 import { ProductService } from './service/product.service';
 import { CartPage } from '../pages/client/cart/cart';
 import { FormInvoicePage } from '../pages/client/invoices/form-invoice/form-invoice';
+import { RegisterPage } from '../pages/register/register';
+import { SubCategorysPage } from '../pages/client/categorys/subcategory/subcategory';
+import { ProductsInvoicePage } from '../pages/client/invoices/product-invoice/product-invoice';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     LoginPage,
+    RegisterPage,
     ClientPage,
       CategorysPage,
       FavoritesPage,
+      SubCategorysPage,
       ProductsPage,
       InvoicesPage,
         FormInvoicePage,
+        ProductsInvoicePage,
       CartPage,
       ConfigurationPage,
         ProfileUpdatePage,
+      FavoritesPage,
   ],
   imports: [
     BrowserModule,
@@ -50,15 +57,20 @@ import { FormInvoicePage } from '../pages/client/invoices/form-invoice/form-invo
     MyApp,
     HomePage,
     LoginPage,
+    RegisterPage,
     ClientPage,
       CategorysPage,
+      SubCategorysPage,
       FavoritesPage,
       ProductsPage,
       InvoicesPage,
         FormInvoicePage,
+        ProductsInvoicePage,
       CartPage,
       ConfigurationPage,
         ProfileUpdatePage,
+      FavoritesPage,
+      
   ],
   providers: [
     StatusBar,

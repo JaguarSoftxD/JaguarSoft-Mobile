@@ -8,6 +8,8 @@ import { CategorysPage } from './categorys/categorys';
 import { ProductsPage } from './products/products';
 import { ConfigurationPage } from './configuration/configuration';
 import { CartPage } from './cart/cart';
+import { FavoritesPage } from './favorites/favorites';
+import { InvoicesPage } from './invoices/invoices';
 
 @Component({
   selector: 'page-client',
@@ -30,12 +32,12 @@ export class ClientPage {
     //this.loadSingleUser();
     // used for an example of ngFor and navigation
     this.pages = [
-      { icon: 'md-apps', ios: 'ios-apps', title: 'Categorías', component: CategorysPage },
-      { icon: 'md-albums', ios: 'ios-albums', title: 'Productos', component: ProductsPage },
-      //{ icon: 'md-star', ios: 'ios-star', title: 'Favoritos', component: CategorysPage },
-      { icon: 'md-cart', ios: 'ios-cart', title: 'Mi Carrito', component: CartPage },      
-      //{ icon: 'md-cash', ios: 'ios-cash', title: 'Mis Compras', component: CategorysPage },
-      { icon: 'md-settings', ios: 'ios-settings', title: 'Configuración de la Cuenta', component: ConfigurationPage }
+      { icon: 'ios-apps', ios: 'ios-apps', title: 'Categorías', component: CategorysPage },
+      { icon: 'ios-albums', ios: 'ios-albums', title: 'Productos', component: ProductsPage },
+      { icon: 'ios-star', ios: 'ios-star', title: 'Favoritos', component: FavoritesPage },
+      { icon: 'ios-cart', ios: 'ios-cart', title: 'Mi Carrito', component: CartPage },      
+      { icon: 'ios-cash', ios: 'ios-cash', title: 'Mis Compras', component: InvoicesPage },
+      { icon: 'ios-settings', ios: 'ios-settings', title: 'Configuración de la Cuenta', component: ConfigurationPage }
     ];
 
   }
@@ -45,7 +47,7 @@ export class ClientPage {
     // we wouldn't want the back button to show in this scenario
     this.loading.create({
       content: "Cargando...",
-      duration: 500
+      duration: 1500
       }).present();
     this.nav.setRoot(page.component);
   }
