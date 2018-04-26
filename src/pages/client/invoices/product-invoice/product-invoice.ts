@@ -25,12 +25,13 @@ export class ProductsInvoicePage {
     public navParams: NavParams,
     public toast: ToastController
   ) {
+    this.loadAll()
     this.parameter = this.navParams.get('parameter');
     console.log(this.parameter)
-    this.loadAll()
+    
     setTimeout(() => {
         this.loadAllProduct(this.parameter)
-      }, 1000);
+      }, 500);
   }
 
   public loadAll() {

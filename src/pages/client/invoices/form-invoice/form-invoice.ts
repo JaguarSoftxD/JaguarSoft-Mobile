@@ -113,11 +113,6 @@ export class FormInvoicePage {
     }).catch(error => {
       console.log(error)
     })
-    
-    this.loading.create({
-      content: 'cargando',
-      duration: 5000
-    }).present();
   }
 
 

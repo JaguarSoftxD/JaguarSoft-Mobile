@@ -9,7 +9,8 @@
 
 <ion-content class="card-background-page">
   <ion-card (click)="seeSubCategorys(c.category_id)" *ngFor="let c of categorys">
-    <img  src="../../../assets/imgs/Categorias.jpg"/>
+    <img  src="../../../assets/imgs/Categorias.jpg" *ngIf="!c.image"/>
+    <img  src="{{c.image}}" *ngIf="c.image"/>    
     <div class="card-title">{{ c.name }}</div>
     <div class="card-subtitle">{{ c.description }}</div>
   </ion-card>

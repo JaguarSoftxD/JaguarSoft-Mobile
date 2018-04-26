@@ -15,11 +15,8 @@
 
   <ion-list no-lines id="myList" >
   <ion-card *ngFor="let p of products" >
-      <img style="height: 60%;" src="{{p.image}}" *ngIf="p.image"/>
-      <img style="height: 60%;" src="../../../assets/imgs/Error 404.jpg" *ngIf="!p.image"/>
       <ion-card-content>
-          <ion-card-title>
-          {{p.product_name}}
+          <ion-card-title><ion-icon name="ios-star" item-start></ion-icon>  {{p.product_name}}
           </ion-card-title>
           <p><strong>Categoría: </strong>{{p.category_name}}
           <strong>Subcategoría: </strong>{{p.subcategory_name}}
