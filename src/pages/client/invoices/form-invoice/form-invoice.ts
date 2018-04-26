@@ -89,6 +89,10 @@ export class FormInvoicePage {
     this.invoiceService.create(this.invoice)
     .then(res => {
       console.log(res)
+      this.loading.create({
+        content: 'Procesando Compra...',
+        duration: 4000
+      }).present()
       for(let x of this.products) {
         let productCart = {
           product_id: x.product_id,
@@ -96,11 +100,7 @@ export class FormInvoicePage {
           qty: 1,
           price: x.price,
           subtotal: 1 * x.price,
-        }
-        this.loading.create({
-          content: 'Realizando Compras',
-          duration: 4000
-        }).present()
+        }        
         console.log(productCart)
         this.invoiceLineService.create(productCart)
         .then(res => {}
