@@ -16,7 +16,11 @@ export class ProductsInvoicePage {
   private parameter:any;
   private search:any;
   private total:any;
-
+  private username;
+  private nit;
+  private email;
+  private address;
+  
   constructor(
     public navCtrl: NavController,
     public invoiceService: InvoiceService,
@@ -28,11 +32,18 @@ export class ProductsInvoicePage {
   ) {
     this.loadAll()
     this.parameter = this.navParams.get('parameter');
+    this.username = localStorage.getItem('username')
+    this.nit = localStorage.getItem('nit')
+    this.email = localStorage.getItem('email')
+    this.address = localStorage.getItem('address')
+
     console.log(this.parameter)
     
     setTimeout(() => {
         this.loadAllProduct(this.parameter)
-        this.calcTotal();
+        setTimeout(() => {
+          this.calcTotal();
+        }, 500);        
       }, 500);
   }
 
@@ -84,7 +95,7 @@ export class ProductsInvoicePage {
   //BUSCAR USUARIOS
   public searchTable() {
     var value = this.search.toLowerCase();
-    $("#myList ion-card").filter(function() {
+    $("#myList ion-item").filter(function() {
       $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
     });
   }

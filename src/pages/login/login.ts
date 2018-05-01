@@ -32,6 +32,7 @@ export class LoginPage {
       localStorage.setItem('username', res.user[0].firstname + ' ' + res.user[0].lastname);
       localStorage.setItem('nit', res.user[0].nit);
       localStorage.setItem('email', res.user[0].email);
+      localStorage.setItem('address', res.user[0].address);
       localStorage.setItem('carrito', JSON.stringify([]))
       this.loading.create({
         content: 'Iniciando Sesión...',

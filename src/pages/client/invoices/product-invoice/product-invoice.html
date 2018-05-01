@@ -3,27 +3,33 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Productos, Total Q {{ total }}</ion-title>
+    <ion-title>Factura No. {{ parameter }}</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
-  <ion-searchbar id="myInput" [(ngModel)]="search"
-    (ionChange)="searchTable()" (keyup)="searchTable()">
-  </ion-searchbar>
+  <ion-item>
+    <p><strong>Nombre: </strong>{{username}}</p>
+    <p><strong>Nit: </strong>{{nit}}</p>
+    <p><strong>Email: </strong>{{email}}</p>
+    <p><strong>Dirección: </strong>{{address}}</p>
+  </ion-item>
 
-  <ion-list no-lines id="myList" >
-    <ion-card *ngFor="let p of products" >
-        <img style="height: 60%;" src="{{p.image}}" *ngIf="p.image"/>
-        <img style="height: 60%;" src="../../../assets/imgs/Error 404.jpg" *ngIf="!p.image"/>
-        <ion-card-content>
-            <ion-card-title>
-            {{p.product}}
-            </ion-card-title>
-            <p><strong>Cantidad: </strong>{{p.qty}}
-            <strong>Subtotal: </strong> {{p.subtotal}}
-            </p>
-        </ion-card-content>
-    </ion-card>
-  </ion-list>
+  <ion-list id="myList" no-lines>
+    <ion-item *ngFor="let p of products"> 
+      <div style="height: 60px;" item-start>
+        <img style="height: 60px;" src="{{p.image}}">
+      </div>
+      <h2>{{p.product}}</h2>
+      <p><strong>Cantidad: </strong>{{p.qty}}</p>
+      <p><strong>Subtotal: </strong>{{p.subtotal}}</p>
+    </ion-item>
+  </ion-list><br/>
+
+  <!-- TOTAL -->
+  <ion-item>
+    <ion-label floating><ion-icon ios="ios-cash-outline" md="md-cash"></ion-icon>  Total</ion-label>
+    <ion-input type="text" [(ngModel)]="total" name="total" disabled>
+    </ion-input>
+  </ion-item>
 </ion-content>

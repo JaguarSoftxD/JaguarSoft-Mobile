@@ -14,15 +14,13 @@
 
   <ion-list no-lines id="myList" >
     <ion-card *ngFor="let p of products" >
-        <img style="height: 60%;" src="{{p.image}}" *ngIf="p.image"/>
-        <img style="height: 60%;" src="../../../assets/imgs/Error 404.jpg" *ngIf="!p.image"/>
+        <img src="{{p.image}}" *ngIf="p.image"/>
+        <img src="../../../assets/imgs/Error 404.jpg" *ngIf="!p.image"/>
         <ion-card-content>
-            <ion-card-title>
-            {{p.name}}
-            </ion-card-title>
-            <p><strong>Descripcion: </strong>{{p.description}}
-            <strong>Precio: </strong> {{p.price}}
-            </p>
+            <ion-card-title *ngIf="name">{{p.name}}</ion-card-title>
+            <ion-card-title *ngIf="product_name">{{p.product_name}}</ion-card-title>
+            <p><strong>Descripcion: </strong>{{p.description}}</p>
+            <p><strong>Precio: </strong> {{p.price}}</p>
         </ion-card-content>
         <ion-list>
           <button ion-item (click)="addToCart(p)">
