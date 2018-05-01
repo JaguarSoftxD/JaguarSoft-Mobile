@@ -15,6 +15,7 @@ export class ProductsInvoicePage {
   private p:any[] = [];
   private parameter:any;
   private search:any;
+  private total:any;
 
   constructor(
     public navCtrl: NavController,
@@ -31,6 +32,7 @@ export class ProductsInvoicePage {
     
     setTimeout(() => {
         this.loadAllProduct(this.parameter)
+        this.calcTotal();
       }, 500);
   }
 
@@ -67,6 +69,16 @@ export class ProductsInvoicePage {
     }).catch(error => {
       console.log(error)
     })
+  }
+
+  calcTotal() {
+    let a:any = 0;
+    let b:any = 0;
+    for(let x of this.products) {
+        a = x.subtotal;
+        b += a;
+    }
+    this.total = parseFloat(b).toFixed(2);
   }
 
   //BUSCAR USUARIOS

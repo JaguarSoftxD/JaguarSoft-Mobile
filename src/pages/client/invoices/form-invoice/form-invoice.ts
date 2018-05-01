@@ -113,6 +113,8 @@ export class FormInvoicePage {
     }).catch(error => {
       console.log(error)
     })
+    localStorage.removeItem('cart')
+    localStorage.setItem('cart', JSON.stringify([]))
   }
 
 

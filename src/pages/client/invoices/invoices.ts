@@ -10,6 +10,7 @@ import { ProductsInvoicePage } from './product-invoice/product-invoice';
 export class InvoicesPage {
   private invoices:any[] = [];
   private parameter:any;
+  private total:any;
   private user_id:any
   constructor(
     public navCtrl: NavController,
