@@ -17,8 +17,8 @@
         <img src="{{p.image}}" *ngIf="p.image"/>
         <img src="../../../assets/imgs/Error 404.jpg" *ngIf="!p.image"/>
         <ion-card-content>
-            <ion-card-title *ngIf="name">{{p.name}}</ion-card-title>
-            <ion-card-title *ngIf="product_name">{{p.product_name}}</ion-card-title>
+            <ion-card-title *ngIf="p.name">{{p.name}}</ion-card-title>
+            <ion-card-title *ngIf="p.product_name">{{p.product_name}}</ion-card-title>
             <p><strong>Descripcion: </strong>{{p.description}}</p>
             <p><strong>Precio: </strong> {{p.price}}</p>
         </ion-card-content>
