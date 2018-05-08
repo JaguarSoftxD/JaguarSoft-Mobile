@@ -36,6 +36,7 @@
       </ion-item>
       <ion-item>
         <ion-label floating><ion-icon ios="ios-calendar" md="md-calendar"></ion-icon>  Fecha de Caducidad</ion-label>
+        <ion-label floating>MM</ion-label>
         <ion-select [(ngModel)]="formcard.mm" name="mm">
           <ion-option value="1">1</ion-option>
           <ion-option value="2">2</ion-option>
@@ -50,6 +51,7 @@
           <ion-option value="11">11</ion-option>
           <ion-option value="12">12</ion-option>
         </ion-select>
+        <ion-label floating>DD</ion-label>
         <ion-select [(ngModel)]="formcard.dd" name="dd">
           <ion-option value="1">1</ion-option>
           <ion-option value="2">2</ion-option>

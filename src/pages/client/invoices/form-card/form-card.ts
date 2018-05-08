@@ -168,7 +168,7 @@ export class FormCardPage {
       localStorage.setItem('carrito', JSON.stringify([]))
       this.sendEmail();
     } else if(this.formcard.tipo == '2') {
-      if(this.formcard) {
+      if(this.formcard.dd) {
         let id = this.invoice.invoice_id;
       console.log(this.invoiceDetail)
       this.invoiceService.create(this.invoice)
