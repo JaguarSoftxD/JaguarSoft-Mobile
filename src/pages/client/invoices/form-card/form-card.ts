@@ -203,12 +203,14 @@ export class FormCardPage {
       this.sendEmail();
       } else {
         this.toast.create({
-          message: 'Los campos son requeridos.'
+          message: 'Los campos son requeridos.',
+          duration: 500
         }).present();
       }
     } else {
       this.toast.create({
-        message: 'Seleccione un tipo de Pago.'
+        message: 'Seleccione un tipo de Pago.',
+        duration: 500
       }).present();
     }
   }
