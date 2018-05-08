@@ -3,6 +3,7 @@ import { NavController, AlertController, LoadingController } from 'ionic-angular
 import { InvoiceService } from '../../../../app/service/invoice.service';
 import { InvoiceLineService } from '../../../../app/service/invoice-line.service';
 import { InvoicesPage } from '../invoices';
+import { FormCardPage } from '../form-card/form-card';
 
 @Component({
   selector: 'form-invoice',
@@ -83,38 +84,12 @@ export class FormInvoicePage {
     this.invoice.amount = b;
   }
 
-  public saveChanges() {
-    let id = this.invoice.invoice_id;
-    console.log(this.invoiceDetail)
-    this.invoiceService.create(this.invoice)
-    .then(res => {
-      console.log(res)
+  public saveChanges() {    
       this.loading.create({
-        content: 'Procesando Compra...',
-        duration: 4000
+        content: 'Cargando',
+        duration: 500
       }).present()
-      for(let x of this.products) {
-        let productCart = {
-          product_id: x.product_id,
-          invoice_id: id,
-          qty: 1,
-          price: x.price,
-          subtotal: 1 * x.price,
-        }        
-        console.log(productCart)
-        this.invoiceLineService.create(productCart)
-        .then(res => {}
-        ).catch(error => {
-          console.log(error);
-        })
-      }
-      
-      this.navCtrl.setRoot(InvoicesPage)
-    }).catch(error => {
-      console.log(error)
-    })
-    localStorage.removeItem('cart')
-    localStorage.setItem('cart', JSON.stringify([]))
+      this.navCtrl.setRoot(FormCardPage)
   }
 
 

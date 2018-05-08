@@ -50,6 +50,17 @@ export class InvoiceService {
       })
     .catch(this.handleError)
   }
+  
+  //CREATE FACTURAS
+  public generate(invoice:any):Promise<any> {
+    let url = `${this.basePath}/generate/pdf`
+    return this.http.post(url, invoice)
+    .toPromise()
+      .then(response => {
+        return response
+      })
+    .catch(this.handleError)
+  }
 
   //GET FACTURAS LINEAS
   public getLines(id:any):Promise<any> {

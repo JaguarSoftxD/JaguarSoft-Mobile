@@ -3,7 +3,7 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Facturas</ion-title>
+    <ion-title>Ordenes</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -12,7 +12,7 @@
   <ion-list no-lines id="myList" >
     <ion-card *ngFor="let p of invoices" (click)="productInvoice(p.invoice_id)">
         <ion-card-content>
-            <ion-card-title><ion-icon ios="ios-cash" md="md-cash"></ion-icon>  Factura No. {{p.invoice_id}}
+            <ion-card-title><ion-icon ios="ios-cash" md="md-cash"></ion-icon>  Orden No. {{p.invoice_id}}
             </ion-card-title>
             <p><strong>Fecha: </strong>{{p.invoice_date}}
             </p>

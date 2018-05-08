@@ -27,6 +27,7 @@ import { FormInvoicePage } from '../pages/client/invoices/form-invoice/form-invo
 import { RegisterPage } from '../pages/register/register';
 import { SubCategorysPage } from '../pages/client/categorys/subcategory/subcategory';
 import { ProductsInvoicePage } from '../pages/client/invoices/product-invoice/product-invoice';
+import { FormCardPage } from '../pages/client/invoices/form-card/form-card';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { ProductsInvoicePage } from '../pages/client/invoices/product-invoice/pr
       InvoicesPage,
         FormInvoicePage,
         ProductsInvoicePage,
+        FormCardPage,
       CartPage,
       ConfigurationPage,
         ProfileUpdatePage,
@@ -66,6 +68,7 @@ import { ProductsInvoicePage } from '../pages/client/invoices/product-invoice/pr
       InvoicesPage,
         FormInvoicePage,
         ProductsInvoicePage,
+        FormCardPage,
       CartPage,
       ConfigurationPage,
         ProfileUpdatePage,

@@ -27,6 +27,7 @@ export class InvoicesPage {
     this.invoiceService.getAllUser(id)
     .then(res => {
       this.invoices = res.user;
+      this.invoices.reverse();
       console.log(this.invoices)
     }).catch(error => {
       console.log(error)

@@ -8,12 +8,15 @@
 </ion-header>
 
 <ion-content padding>
+
   <ion-list no-lines id="myList" >
-        <ion-list *ngFor="let p of subcategorys">
-          <button ion-item (click)="seeProducts(p.subcategory_id)">
-          <ion-icon name="ios-basket" item-start></ion-icon>
+        <ion-item *ngFor="let p of subcategorys" (click)="seeProducts(p.subcategory_id)">
+            <div style="height: 60px;" item-start>
+                <img style="height: 60px;" src="{{p.image}}">
+              </div>
+          <button ion-item >
           {{p.name}}
           </button>
-      </ion-list>
+      </ion-item>
   </ion-list>
 </ion-content>
